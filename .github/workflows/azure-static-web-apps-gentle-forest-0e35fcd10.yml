@@ -29,7 +29,7 @@ jobs:
         run: npm install
 
       - name: Build React App
-        run: npx nx build
+        run: npm build
 
       - name: Build and Deploy
         id: builddeploy
