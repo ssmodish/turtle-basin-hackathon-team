@@ -19,7 +19,14 @@ jobs:
         with:
           submodules: true
           lfs: false
-      - name: Build And Deploy
+      - name: Setup Node
+        with:
+          node-version: '20.14.0'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build React App
+        run: nx build
+      - name: Build and Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
         with:
